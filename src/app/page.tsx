@@ -5,6 +5,7 @@ import Redux_A from "./Home/redux-test/A";
 import Redux_B from "./Home/redux-test/B";
 import Redux_C from "./Home/redux-test/C";
 import Recoil_A from "./Home/recoil-test/A";
+import Recoil_B from "./Home/recoil-test/B";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
           <Redux_B />
           <Redux_C />
           <Recoil_A />
+          <Recoil_B />
         </ReduxProvider>
       </RecoilProvider>
   );
