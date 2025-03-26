@@ -1,10 +1,13 @@
 "use client";
 import { useRecoilState } from "recoil";
-import { counterState } from "../../recoli/counterAtom";
+import { counterState } from "../../recoil/counterAtom";
+import { counterJotai } from '../../recoil/counterJotai';
+
+import { useAtom } from 'jotai';
 import { useEffect } from "react";
 
 const A = () => {
-  const [count, setCount] = useRecoilState(counterState);
+  const [count, setCount] = useAtom(counterJotai); // 상태 읽기 및 수정
 
   useEffect(() => {
     console.log("A 컴포넌트가 마운트됨!");
@@ -16,7 +19,7 @@ const A = () => {
 
   useEffect(() => {
     console.log(`🔄 A 컴포넌트 리렌더링됨! (Counter: ${count})`);
-  });
+  }, [count]); // count 상태가 변경될 때만 실행됨
 
   return (
     <div>
